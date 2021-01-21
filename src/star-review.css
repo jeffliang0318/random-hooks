@@ -1,9 +1,27 @@
-.rating {
+.rating,
+.rating-solid {
   direction: rtl;
   text-align: center;
 }
 
+.rating-solid > span:hover,
+.rating-solid > span:hover ~ span {
+  color: gold;
+}
+
+.rating > span {
+  display: inline-block;
+  position: relative;
+}
 .rating > span:hover,
 .rating > span:hover ~ span {
+  color: transparent;
+}
+
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+  content: "\2605";
+  position: absolute;
+  left: 0;
   color: gold;
 }
