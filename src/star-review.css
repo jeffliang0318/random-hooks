@@ -1,0 +1,9 @@
+.rating {
+  direction: rtl;
+  text-align: center;
+}
+
+.rating > span:hover,
+.rating > span:hover ~ span {
+  color: gold;
+}

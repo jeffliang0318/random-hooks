@@ -4,6 +4,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Thanks to [Beginner React.js Coding Interview (ft. Clément Mihailescu)](https://www.youtube.com/watch?v=gnkrDse9QKc&ab_channel=BenAwad).
 
+Thanks to [Star Ratings With Very Little CSS](https://css-tricks.com/star-ratings/).
+
 ## Available Scripts
 
 In the project directory, you can run:

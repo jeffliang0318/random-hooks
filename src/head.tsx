@@ -14,7 +14,8 @@ export default function Nav () {
                         <Link className="nav-item nav-link" to="/">Home</Link>
                         <Link className="nav-item nav-link" to="/random-user">Random User</Link>
                         <Link className="nav-item nav-link" to="/ref">Ref.current</Link>
-                        <a className="nav-item nav-link disabled" href="/">Disabled</a>
+                        <Link className="nav-item nav-link" to="/star">Star</Link>
+                        <Link className="nav-item nav-link disabled" to="/">Disabled</Link>
                     </div>
                 </div>
             </div>

@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
 import './App.css';
-import Head from './header'
+import Head from './head'
 import RandomUser from './random-user'
 import Home from './Home'
+import Star from './star'
 
 function App() {
 
@@ -20,6 +20,9 @@ function App() {
           </Route>
           <Route path="/random-user">
             <RandomUser />
+          </Route>
+          <Route path="/star">
+            <Star/>
           </Route>
           <Route path="/ref">
             {/* <Dashboard /> */}
