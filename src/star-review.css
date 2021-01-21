@@ -25,3 +25,14 @@
   left: 0;
   color: gold;
 }
+
+.star-active {
+  color: transparent;
+}
+
+.star-active:before {
+  content: "\2605";
+  position: absolute;
+  left: 0;
+  color: gold;
+}
