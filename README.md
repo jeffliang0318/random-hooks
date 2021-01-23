@@ -2,9 +2,11 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Thanks to [Beginner React.js Coding Interview (ft. Clément Mihailescu)](https://www.youtube.com/watch?v=gnkrDse9QKc&ab_channel=BenAwad).
+Thanks [Beginner React.js Coding Interview (ft. Clément Mihailescu)](https://www.youtube.com/watch?v=gnkrDse9QKc&ab_channel=BenAwad).
 
-Thanks to [Star Ratings With Very Little CSS](https://css-tricks.com/star-ratings/).
+Thanks [Star Ratings With Very Little CSS](https://css-tricks.com/star-ratings/).
+
+Thanks [從實際案例看 class 與 function component 的差異](https://blog.techbridge.cc/2020/06/13/class-function-component-and-useeffect/).
 
 ## Available Scripts
 

@@ -8,6 +8,7 @@ import Head from './head'
 import RandomUser from './random-user'
 import Home from './Home'
 import Star from './star'
+import Reference from './referance'
 
 function App() {
 
@@ -25,7 +26,7 @@ function App() {
             <Star/>
           </Route>
           <Route path="/ref">
-            {/* <Dashboard /> */}
+            <Reference />
           </Route>
         </Switch>
     </Router>
