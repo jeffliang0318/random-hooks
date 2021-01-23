@@ -5,7 +5,7 @@ const grecaptcha = {
   render: function(element: HTMLDivElement, { callback }: { callback: Function}) {
     if (isCalled) throw new Error("You can only call me once");
     isCalled = true;
-    element.innerText = "click show current current callback function";
+    element.innerText = "click to show current callback function";
     element.addEventListener("click", function() {
       callback("you got token!");
     });
@@ -15,21 +15,19 @@ const grecaptcha = {
 const ReCAPTCHA = ({ onChange }: {onChange: Function}) => {
   const divRef = useRef() as React.MutableRefObject<HTMLInputElement>;
   const cbRef = useRef(onChange)
-  
-  const handleCallback = () => {
-    cbRef.current();
-  }
 
   useEffect(() => {
     cbRef.current = onChange
   }, [onChange])
   
+  const handleLoad = () => {
+    grecaptcha.render(divRef.current, {
+      callback: () => {
+        cbRef.current();
+      }
+    });
+  };
   useEffect(() => {
-    const handleLoad = () => {
-      grecaptcha.render(divRef.current, {
-        callback: handleCallback
-      });
-    };
     handleLoad();
   }, []);
 
@@ -50,38 +48,36 @@ export default function Reference() {
   return (
     <div className="container-md">
       <ReCAPTCHA onChange={isOld ? oldFunction : newFunction} />
-      <p ref={pRef}>Click ^</p>
+      <p ref={pRef}>Current callback function</p>
       <button type="button" className="btn-primary"
         onClick={() => {
           console.log("Switch to new function");
           setIsOld(false);
         }}
       >
-        replace with new function
+        Switch to new function
       </button>
       <pre><code className="hljs typescript">
         {
-        `  const divRef = useRef() as React.MutableRefObject<HTMLInputElement>;
-        const cbRef = useRef(onChange)
-        
-        const handleCallback = () => {
-          cbRef.current();
-        }
-      
-        useEffect(() => {
-          cbRef.current = onChange
-        }, [onChange])
-        
-        useEffect(() => {
-          const handleLoad = () => {
-            grecaptcha.render(divRef.current, {
-              callback: handleCallback
-            });
-          };
-          handleLoad();
-        }, []);
-      
-        return <div ref={divRef} />;`
+        `const divRef = useRef() as React.MutableRefObject<HTMLInputElement>;
+const cbRef = useRef(onChange)
+
+useEffect(() => {
+  cbRef.current = onChange
+}, [onChange])
+
+const handleLoad = () => {
+  grecaptcha.render(divRef.current, {
+    callback: () => {
+      cbRef.current();
+    }
+  });
+};
+useEffect(() => {
+  handleLoad();
+}, []);
+
+return <div ref={divRef} />;`
         }
 </code></pre>
     </div>
