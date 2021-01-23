@@ -36,7 +36,7 @@ const ReCAPTCHA = ({ onChange }: {onChange: Function}) => {
   return <div ref={divRef} />;
 };
 
-export default function Referance() {
+export default function Reference() {
   const [isOld, setIsOld] = useState(true);
   const pRef = useRef() as React.MutableRefObject<HTMLInputElement>;
   const oldFunction = () => {

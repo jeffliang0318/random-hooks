@@ -8,7 +8,7 @@ import Head from './head'
 import RandomUser from './random-user'
 import Home from './Home'
 import Star from './star'
-import Reference from './referance'
+import Reference from './reference'
 
 function App() {
 
