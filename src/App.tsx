@@ -18,6 +18,7 @@ function App() {
       <Switch>
           <Route exact path="/">
             <Home></Home>
+            <RandomUser />
           </Route>
           <Route path="/random-user">
             <RandomUser />
@@ -27,6 +28,9 @@ function App() {
           </Route>
           <Route path="/ref">
             <Reference />
+          </Route>
+          <Route path="/styleguide">
+            {/* <Reference /> */}
           </Route>
         </Switch>
     </Router>

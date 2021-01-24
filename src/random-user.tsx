@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 interface UserName {
   first: string,
@@ -22,8 +22,10 @@ export default function RandomUser() {
 
   const [randomUser, setRandomUser] = useState<UserInfo[]>([]);
   const [pageNumber, setPageNumber] = useState(1);
+  const getUsersData = useRef(() => {});
 
-  async function getUsersData () {
+  
+  getUsersData.current = async () => {
     const res = await fetch(`https://randomuser.me/api/?page${pageNumber}`);
     const jsonData = await res.json();
     if (!jsonData) {return}
@@ -32,12 +34,8 @@ export default function RandomUser() {
   }
   
   useEffect(() => {
-    getUsersData();
-  }, [])
-
-  useEffect(() => {
-    getUsersData();
-  }, [pageNumber])
+    getUsersData.current();
+  }, [getUsersData, pageNumber])
   
   const users = randomUser.map((userInfo: UserInfo, idx: number) => {
     const name = userInfo.name  
@@ -55,6 +53,7 @@ export default function RandomUser() {
 
   return (
       <div className="App container-md">
+        <h1>Click bottom right button to get more random user</h1>
         <button 
           type="button" 
           className="btn btn-primary fixed-bottom" 
