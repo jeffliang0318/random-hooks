@@ -1,85 +1,36 @@
-import React, { useState, useRef, useEffect } from "react";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    useRouteMatch
+  } from "react-router-dom";
 
-let isCalled = false;
-const grecaptcha = {
-  render: function(element: HTMLDivElement, { callback }: { callback: Function}) {
-    if (isCalled) throw new Error("You can only call me once");
-    isCalled = true;
-    element.innerText = "click to show current callback function";
-    element.addEventListener("click", function() {
-      callback("you got token!");
-    });
-  }
-};
+import ReCaptchaRef from "./reCAPTCHA-ref"
+import CatBack from './useCatBack'
 
-const ReCAPTCHA = ({ onChange }: {onChange: Function}) => {
-  const divRef = useRef() as React.MutableRefObject<HTMLInputElement>;
-  const cbRef = useRef(onChange)
+export default function Ref () {
+    let { path, url } = useRouteMatch();
 
-  useEffect(() => {
-    cbRef.current = onChange
-  }, [onChange])
+    return (
+      <div className='container-md'>
+        <h2>UseRef, UseCallback</h2>
+        <div className="d-flex navbar-light">
+            <nav className="bg-light navbar-nav m-2 px-2">
+                <Link className="nav-item nav-link" to={`${url}`}>UseCatback</Link>
+                <Link className="nav-item nav-link" to={`${url}/recap`}>UseRef.current</Link>
+                {/* <Link className="nav-item nav-link" to={`${url}/props-v-state`}>Props v. State</Link> */}
+            </nav>
+            <Switch>
+                <Route exact path={`${path}`}>
+                    <CatBack />
+                </Route>
+                <Route path={`${path}/recap`}>
+                    <ReCaptchaRef />
+                </Route>
+            </Switch>
+        </div>
   
-  const handleLoad = () => {
-    grecaptcha.render(divRef.current, {
-      callback: () => {
-        cbRef.current();
-      }
-    });
-  };
-  useEffect(() => {
-    handleLoad();
-  }, []);
-
-  return <div ref={divRef} />;
-};
-
-export default function Reference() {
-  const [isOld, setIsOld] = useState(true);
-  const pRef = useRef() as React.MutableRefObject<HTMLInputElement>;
-  const oldFunction = () => {
-    pRef.current.innerText = 'old function';
-  };
-
-  const newFunction = () => {
-    pRef.current.innerText = 'new function';
-  }
-
-  return (
-    <div className="container-md">
-      <ReCAPTCHA onChange={isOld ? oldFunction : newFunction} />
-      <p ref={pRef}>Current callback function</p>
-      <button type="button" className="btn-primary"
-        onClick={() => {
-          console.log("Switch to new function");
-          setIsOld(false);
-        }}
-      >
-        Switch to new function
-      </button>
-      <pre><code className="hljs typescript">
-        {
-        `const divRef = useRef() as React.MutableRefObject<HTMLInputElement>;
-const cbRef = useRef(onChange)
-
-useEffect(() => {
-  cbRef.current = onChange
-}, [onChange])
-
-const handleLoad = () => {
-  grecaptcha.render(divRef.current, {
-    callback: () => {
-      cbRef.current();
-    }
-  });
-};
-useEffect(() => {
-  handleLoad();
-}, []);
-
-return <div ref={divRef} />;`
-        }
-</code></pre>
-    </div>
-  );
+      </div>
+    );
 }

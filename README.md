@@ -8,6 +8,8 @@ Thanks [Star Ratings With Very Little CSS](https://css-tricks.com/star-ratings/)
 
 Thanks [從實際案例看 class 與 function component 的差異](https://blog.techbridge.cc/2020/06/13/class-function-component-and-useeffect/).
 
+Thanks [useCallback Might Be What You Meant By useRef & useEffect](https://medium.com/welldone-software/usecallback-might-be-what-you-meant-by-useref-useeffect-773bc0278ae).
+
 ## Available Scripts
 
 In the project directory, you can run:
