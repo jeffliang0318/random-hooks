@@ -13,7 +13,7 @@ export default function Nav () {
                     <div className="navbar-nav">
                         <Link className="nav-item nav-link" to="/">Home</Link>
                         <Link className="nav-item nav-link" to="/random-user">Random User</Link>
-                        <Link className="nav-item nav-link" to="/ref">Ref.current</Link>
+                        <Link className="nav-item nav-link" to="/ref">Ref, callback, reducer</Link>
                         <Link className="nav-item nav-link" to="/star">Star</Link>
                         <Link className="nav-item nav-link disabled" to="/">Disabled</Link>
                     </div>

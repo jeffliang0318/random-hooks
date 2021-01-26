@@ -28,6 +28,9 @@ export default function Ref () {
                 <Route path={`${path}/recap`}>
                     <ReCaptchaRef />
                 </Route>
+                <Route path={`${path}/recducer`}>
+                    {/* <ReCaptchaRef /> */}
+                </Route>
             </Switch>
         </div>
   
