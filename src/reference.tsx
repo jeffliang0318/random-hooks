@@ -4,10 +4,11 @@ import {
     Route,
     Link,
     useRouteMatch
-  } from "react-router-dom";
+} from "react-router-dom";
 
 import ReCaptchaRef from "./reCAPTCHA-ref"
 import CatBack from './useCatBack'
+import Reducer from './useReducer'
 
 export default function Ref () {
     let { path, url } = useRouteMatch();
@@ -19,6 +20,7 @@ export default function Ref () {
             <nav className="bg-light navbar-nav m-2 px-2">
                 <Link className="nav-item nav-link" to={`${url}`}>UseCatback</Link>
                 <Link className="nav-item nav-link" to={`${url}/recap`}>UseRef.current</Link>
+                <Link className="nav-item nav-link" to={`${url}/reducer`}>UseReducer</Link>
                 {/* <Link className="nav-item nav-link" to={`${url}/props-v-state`}>Props v. State</Link> */}
             </nav>
             <Switch>
@@ -28,8 +30,8 @@ export default function Ref () {
                 <Route path={`${path}/recap`}>
                     <ReCaptchaRef />
                 </Route>
-                <Route path={`${path}/recducer`}>
-                    {/* <ReCaptchaRef /> */}
+                <Route path={`${path}/reducer`}>
+                    <Reducer />
                 </Route>
             </Switch>
         </div>
