@@ -1,5 +1,4 @@
 import {
-    BrowserRouter as Router,
     Switch,
     Route,
     Link,
@@ -9,6 +8,7 @@ import {
 import ReCaptchaRef from "./reCAPTCHA-ref"
 import CatBack from './useCatBack'
 import Reducer from './useReducer'
+import CHooks from './custom-hooks'
 
 export default function Ref () {
     let { path, url } = useRouteMatch();
@@ -21,6 +21,7 @@ export default function Ref () {
                 <Link className="nav-item nav-link" to={`${url}`}>UseCatback</Link>
                 <Link className="nav-item nav-link" to={`${url}/recap`}>UseRef.current</Link>
                 <Link className="nav-item nav-link" to={`${url}/reducer`}>UseReducer</Link>
+                <Link className="nav-item nav-link" to={`${url}/customHooks`}>Custom Hooks</Link>
                 {/* <Link className="nav-item nav-link" to={`${url}/props-v-state`}>Props v. State</Link> */}
             </nav>
             <Switch>
@@ -32,6 +33,9 @@ export default function Ref () {
                 </Route>
                 <Route path={`${path}/reducer`}>
                     <Reducer />
+                </Route>
+                <Route path={`${path}/customHooks`}>
+                    <CHooks />
                 </Route>
             </Switch>
         </div>
