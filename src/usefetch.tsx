@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
-
-export default function useFetch(url: string) {
-  const [data, setData] = useState<JSON>();
+interface User {
+  login: string;
+  id: string;
+}
+export function useFetch(url: string): [User[] | undefined, boolean, string] {
+  const [data, setData] = useState<User[] | undefined>();
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState();
+  const [error, setError] = useState("");
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())

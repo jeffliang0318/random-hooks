@@ -5,6 +5,7 @@ import CatBack from "./useCatBack";
 import Reducer from "./useReducer";
 import CHooks from "./custom-hooks";
 import Trees from "./tree-context";
+import UseFetch from "./feetch-github-user";
 
 export default function Ref() {
   let { path, url } = useRouteMatch();
@@ -29,6 +30,9 @@ export default function Ref() {
           <Link className="nav-item nav-link" to={`${url}/context`}>
             Trees context
           </Link>
+          <Link className="nav-item nav-link" to={`${url}/useFetch`}>
+            useFetch
+          </Link>
           {/* <Link className="nav-item nav-link" to={`${url}/props-v-state`}>Props v. State</Link> */}
         </nav>
         <Switch>
@@ -46,6 +50,9 @@ export default function Ref() {
           </Route>
           <Route exact path={`${path}/context`}>
             <Trees />
+          </Route>
+          <Route exact path={`${path}/useFetch`}>
+            <UseFetch />
           </Route>
         </Switch>
       </div>
