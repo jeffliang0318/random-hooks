@@ -1,8 +1,7 @@
-import { useContext } from "react";
-import { TreeContext } from "./";
+import { useTrees } from "./";
 
 export default function Tree() {
-  const result = useContext(TreeContext);
+  const result = useTrees();
   const trees = result?.trees.map((tree) => <li key={tree.id}>{tree.name}</li>);
 
   return (

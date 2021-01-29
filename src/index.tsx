@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useContext } from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
@@ -9,7 +9,8 @@ interface Tree {
 interface Trees {
   trees: Tree[];
 }
-export const TreeContext = createContext<Trees | undefined>(undefined);
+const TreeContext = createContext<Trees | undefined>(undefined);
+export const useTrees = () => useContext(TreeContext);
 export const trees = [
   { id: "1", name: "Oak" },
   { id: "2", name: "Maple" },
