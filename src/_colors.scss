@@ -1,0 +1,99 @@
+$background: #F5F7FC;
+
+// Brand Colors
+// -----
+$brand-blue: #53629D;
+$brand-blue2: #D3D9E7;
+$brand-blue3: #EBEFF9;
+// color/brand/purple/1
+// Color for header
+// Text field outline color when users click
+$brand-purple: #5838C7;
+// color/brand/purple/2
+$brand-purple2: #D8D4E7;
+// color/brand/purple/3
+// highlight color when user hover over the table row
+$brand-purple3: #F1EFF7;
+$dark-purple: #41269B;
+$brand: $brand-purple;
+
+// UI
+// -------
+// color/ui/blue/1
+// Primary CTA - default state
+$blue: #3C84EA;
+// color/ui/blue/2
+// Primary CTA - inactive state
+$blue2: #8BA7CE;
+// color/ui/green/1
+// Success message 
+$green: #5CB85C;
+// color/ui/green/2
+// Alert banner background - Success message
+$green2: #F8FFF8;
+// color/ui/red/1
+// Error message / Fix CTA 
+$red: #D43131;
+// color/ui/red/2
+// Alert banner background - Error message
+$red2: #FEF3F3;
+
+// Bootstrap color system
+// ------
+
+// $white:    #fff !default;
+$dark2: #373737;
+$gray-100: #f3f4f8;
+// $gray-200: #e9ecef !default;
+// $gray-300: #dee2e6 !default;
+// $gray-400: #B2B2B2 !default;
+$gray-500: #BBBBBB;
+$gray-600: #868686;
+$gray-700: #777777;
+$gray-800: #555555 ;
+// $gray-900: #212529 !default;
+// $black:    #000 !default;
+
+// fusv-disable
+$grays: (
+  "100": $gray-100,
+  "200": $gray-200,
+  "300": $gray-300,
+  "400": $gray-400,
+  "500": $gray-500,
+  "600": $gray-600,
+  "700": $gray-700,
+  "800": $gray-800,
+  "900": $gray-900
+);
+// fusv-enable
+
+// $blue:    #0d6efd !default;
+// $indigo:  #6610f2 !default;
+// $purple:  #5838C7;
+// $pink:    #d63384 !default;
+// $red:     #dc3545 !default;
+// $orange:  #fd7e14 !default;
+$yellow:  #E29200;
+// $green:   #198754 !default;
+// $teal:    #20c997 !default;
+// $cyan:    #0dcaf0 !default;
+
+// scss-docs-start colors-map
+// $colors: (
+//   "blue":       $blue,
+//   "indigo":     $indigo,
+//   "purple":     $purple,
+//   "pink":       $pink,
+//   "red":        $red,
+//   "orange":     $orange,
+//   "yellow":     $yellow,
+//   "green":      $green,
+//   "teal":       $teal,
+//   "cyan":       $cyan,
+//   "white":      $white,
+//   "gray":       $gray-600,
+//   "gray-dark":  $gray-800
+// ) !default;
+
+$checkbox-browser-default: #0175FF;
